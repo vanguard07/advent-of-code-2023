@@ -1,22 +1,22 @@
 package main
 
 import (
-    "bufio"
-    "fmt"
-    "os"
+	"bufio"
+	"fmt"
+	"os"
 	"log"
 	"unicode"
 )
 
 func check(e error) {
-    if e != nil {
-        panic(e)
-    }
+	if e != nil {
+		panic(e)
+	}
 }
 
 func main()  {
-	file, err := os.Open("input.txt")
-    check(err)
+	file, err := os.Open("day01/input.txt")
+	check(err)
 
 	scanner := bufio.NewScanner(file)
 	ans := 0
@@ -43,11 +43,11 @@ func main()  {
 		}
 		ans += firstNum * 10 + lastNum
 
-    }
+	}
 
 	file.Close()
 	fmt.Println(ans)
-    if err := scanner.Err(); err != nil {
-        log.Fatal(err)
-    }
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 }
